@@ -13,11 +13,11 @@
         font-family: 'Fjalla One', sans-serif;
     }
     h1 {
-        font-size: 96px;
+        font-size: 72px;
         margin-bottom: 0px;
     }
     h3 {
-        font-size: 48px;
+        font-size: 36px;
         margin-top: 0px;
     }
 </style>
