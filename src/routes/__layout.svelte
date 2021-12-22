@@ -19,5 +19,10 @@
     :global(body) {
 		margin: 0;
         font-family: 'Open Sans', sans-serif;
+        background-color: #0F292F;
 	}
+    :global(h1,h2) {
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
 </style>
