@@ -12,7 +12,7 @@
         max-width: 700px;
         margin: 0 auto;
         display: grid;
-        font-size: 26px;
+        font-size: 2.5vh;
         color: white;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         place-items: center;
