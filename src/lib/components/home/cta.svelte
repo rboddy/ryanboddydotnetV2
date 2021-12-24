@@ -24,16 +24,17 @@
         background-color: #00E9FF;
         color: #0F292F;
     }
-    .shake:hover{ 
-        animation: shake .25s 2;
+    .shake{ 
+        animation: shake 5.25s infinite;
         animation-timing-function: linear;
         cursor: pointer;
     }
 
     @keyframes shake {
-        0% { transform: rotate(0.5deg); }
-        50% { transform: rotate(-5deg); }
-        100% { transform: rotate(5deg); }
+        45% { transform: rotate(0deg); }
+        50% { transform: rotate(-3deg); }
+        55% { transform: rotate(3deg); }
+        60% { transform: rotate(0deg); }
     }
     @media only screen 
         and (min-device-width: 320px) 
