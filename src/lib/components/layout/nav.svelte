@@ -5,7 +5,8 @@
         <a href="/" class="brand">ryanboddy.net</a>
         <div></div>
         <a href="/contact"><i class="far fa-envelope-square"></i> contact</a>
-        <a href="/blog" class="btnLink"><i class="fas fa-typewriter"></i> blog</a>
+        <a href="/blog"><i class="fas fa-typewriter"></i> blog</a>
+        <a href="/" class="btnLink"><i class="fa-brands fa-discord"></i> Join</a>
     </div>
 </nav>
 
@@ -30,8 +31,8 @@
     .nav-menu {
         display: grid;
         height: 80px;
-        grid-template-columns: 1fr 9fr repeat(2, 1fr);
-        align-items: center;
+        grid-template-columns: 1.5fr 7.5fr repeat(3, 1fr);
+        place-items: center;
     }
     .btnLink {
         background-color: var(--btn-bg);
