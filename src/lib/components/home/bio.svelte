@@ -11,10 +11,10 @@
 
 <style>
     .bioGrid {
-        max-width: 700px;
+        max-width: 900px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         place-items: center;
         padding: 0px 30px 0px 30px;
     }
