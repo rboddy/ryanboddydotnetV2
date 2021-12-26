@@ -10,7 +10,7 @@
     h2 {
         font-size: 3vh;
         font-family: "Fjalla One", sans-serif;
-        color: white;
+        color: #1D2030;
     }
     .ctaBtn {
         height: 50px;
@@ -21,7 +21,7 @@
         box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.25);
         font-size: 1rem;
         font-weight: bold;
-        background-color: #00E9FF;
+        background-color: #199BED;
         color: #0F292F;
     }
     .shake{ 

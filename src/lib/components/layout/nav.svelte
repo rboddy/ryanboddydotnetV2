@@ -17,7 +17,7 @@
         font-weight: normal;
     }
     a {
-        color: var(--nav-color);
+        color: #EBE8E6;
         text-decoration: none;
         font-size: 20px;
         font-weight: bold;
@@ -26,7 +26,7 @@
     .custom-nav {
         width: 100%;
         height: 80px;
-        background-color: var(--nav-bg)
+        background-color: #1D2030;
     }
     .nav-menu {
         display: grid;
@@ -35,11 +35,11 @@
         place-items: center;
     }
     .btnLink {
-        background-color: var(--btn-bg);
+        background-color: #199BED;
         width: 100px;
         padding: 5px;
         border-radius: 90px;
-        color: var(--btn-color);
+        color: #1D2030;
         box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
     }
     @media only screen 

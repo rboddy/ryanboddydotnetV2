@@ -6,7 +6,7 @@
 <style>
     .introMessage {
         margin: 0 auto;
-        margin-top: -350px;
+        margin-top: 30px;
         width: 75%;
         text-align: center;
         color: white;

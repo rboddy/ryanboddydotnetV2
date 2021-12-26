@@ -3,11 +3,7 @@
     import { page } from '$app/stores';
 </script>
 
-{#if $page.path === '/'}
-    <Nav --nav-bg='#0F292F' --nav-color='#00E9FF' --btn-color='#0F292F' --btn-bg='#00E9FF' />
-{:else}
-    <Nav --nav-bg='#CB2D6F' --nav-color='#0F292F' --btn-color="#00E9FF" --btn-bg='#0F292F' />
-{/if}
+<Nav />
 
 <main>
     <slot />
@@ -17,7 +13,7 @@
     :global(body) {
 		margin: 0;
         font-family: 'Open Sans', sans-serif;
-        background-color: #0F292F;
+        background-color: #EBE8E6;
 	}
     :global(h1,h2) {
         margin-bottom: 0px;

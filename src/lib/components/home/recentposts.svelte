@@ -34,7 +34,7 @@
     h1 {
         text-align: center;
         margin-top: 50px;
-        color: white;
+        color: #1D2030;
     }
     .postsGrid {
         max-width: 900px;
@@ -48,6 +48,7 @@
     }
     .postCard {
         background-color: white;
+        color: #1D2030;
         border-radius: 10px;
         box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
         padding: 10px;
@@ -59,7 +60,7 @@
     }
     .btnBar > a{
         text-decoration: none;
-        color: #CB2D6F;
+        color: #216798;
         font-size: 18px;
         font-weight: bold;
     }

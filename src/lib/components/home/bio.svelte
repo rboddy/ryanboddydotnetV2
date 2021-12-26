@@ -19,7 +19,7 @@
         padding: 0px 30px 0px 30px;
     }
     .gravatar {
-        border-radius: 360px;
+        border-radius: 20px;
         width: 25vh;
         height: auto;
     }
