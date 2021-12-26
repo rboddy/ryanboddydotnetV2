@@ -1,14 +1,19 @@
 <script>
-import { onMount } from "svelte";
-
     import client from "/src/routes/sanity.js";
+    import { each } from "svelte/internal";
 
-    onMount(() => {
-        let query = "*[_type == 'post']";
-        client.fetch(query).then((posts) => {
-            console.log(posts)
-        })
-    })
+    let query = "*[ _type == 'post' ]{title}"
+
+    async function getPosts() {
+        let blogPosts = await client.fetch(query);
+        return blogPosts;
+    }
+    const posts = getPosts();
+
 </script>
 
-<h1>yeah</h1>
+{#await posts then postlist}
+	{#each postlist as post}
+        <p>{post.title}</p>
+    {/each}
+{/await}
