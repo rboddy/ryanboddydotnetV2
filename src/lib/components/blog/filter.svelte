@@ -12,13 +12,13 @@
 </script>
 
 <div class="filterBox">
-    <p>Sort by Topic:</p>
+    <p class="sortBy">Sort by Topic:</p>
     {#await cats then categories}
         {#each categories as category}
             <button class="catBtn">{category.title}</button>
         {/each}
         <select class="mobileSelect">
-            <option>Pick Category</option>
+            <option>Sort by Category</option>
             {#each categories as category}
                 <option>{category.title}</option>
             {/each}
@@ -53,8 +53,9 @@
     }
     .mobileSelect {
         display: none;
-        height: 30px;
+        height: 40px;
         border-radius: 360px;
+        font-size: 16px;
     }
     @media only screen 
         and (min-device-width: 320px) 
@@ -63,12 +64,16 @@
             .filterBox {
                 grid-template-columns: none;
                 width: 90%;
+                margin-top: 15px;
             }
             .catBtn {
                 display: none;
             }
             .mobileSelect {
                 display: block;
+            }
+            .sortBy {
+                display: none;
             }
     }
 </style>
