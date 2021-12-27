@@ -10,7 +10,7 @@
         font-size: 8vh;
         margin-top: 30px;
         font-family: 'Fjalla One', sans-serif;
-        color: #199BED;
+        color: #1D2030;
         text-align: center;
         text-transform: uppercase;
     }
