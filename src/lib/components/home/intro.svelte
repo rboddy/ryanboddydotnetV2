@@ -20,12 +20,4 @@
         font-size: 4vh;
         margin-top: 0px;
     }
-    @media only screen 
-        and (min-device-width: 320px) 
-        and (max-device-width: 480px)
-        and (-webkit-min-device-pixel-ratio: 2) {
-            .introMessage  {
-                margin-top: -160px;
-            }
-    }
 </style>

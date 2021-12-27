@@ -2,7 +2,7 @@
     import client from "/src/routes/sanity.js";
     import { each } from "svelte/internal";
 
-    let query = "*[_type == 'post']{title, publishedAt, slug, excerpt}"
+    let query = "*[_type == 'post'] | order(publishedAt desc) {title, publishedAt, slug, excerpt}[0...3]"
 
     async function getPosts() {
         let blogPosts = await client.fetch(query);
@@ -27,6 +27,9 @@
                 </div>
             </div>
         {/each}
+        <div class="readMore">
+            <a class="blogLink" href="/blog"><i class="fas fa-arrow-circle-right fa-5x"></i><br />All Posts</a>
+        </div>
     {/await}
 </div>
 
@@ -48,20 +51,32 @@
     }
     .postCard {
         background-color: white;
+        height: 250px;
         color: #1D2030;
         border-radius: 10px;
         box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
         padding: 10px;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
     }
     .btnBar {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         place-items: center;
     }
-    .btnBar > a{
+    .postCard a{
         text-decoration: none;
         color: #216798;
         font-size: 18px;
         font-weight: bold;
+    }
+    .readMore a{
+        color: #216798;
+        text-decoration: none;
+        text-align: center;
+        display: grid;
+        place-items: center;
+        font-size: 20px;
+        line-height: 10px;
     }
 </style>
