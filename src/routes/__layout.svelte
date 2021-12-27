@@ -13,6 +13,7 @@
     :global(body) {
 		margin: 0;
         font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
         background-color: #EBE8E6;
 	}
     :global(h1,h2) {
