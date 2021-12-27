@@ -35,6 +35,8 @@
         border: none;
         padding: 10px;
         border-radius: 15px;
+        font-size: 16px;
+        font-family: 'Open Sans', sans-serif;
     }
     .inputBar {
         display: grid;
