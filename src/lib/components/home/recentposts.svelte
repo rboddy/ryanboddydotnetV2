@@ -48,13 +48,15 @@
         margin-top: 20px;
         margin-bottom: 50px;
         display: grid;
-        gap: 30px;
+        /* gap: 30px; */
+        row-gap: 30px;
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         place-items: center;
     }
     .postCard {
         background-color: white;
         height: 250px;
+        width: 90%;
         color: #1D2030;
         border-radius: 10px;
         box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
@@ -86,8 +88,11 @@
         and (min-device-width: 320px) 
         and (max-device-width: 480px)
         and (-webkit-min-device-pixel-ratio: 2) {
+            .postsGrid {
+                grid-template-columns: none;
+                width: 90%;
+            }
             .postCard {
-                width: 80%;
                 height: auto;
             }
     }

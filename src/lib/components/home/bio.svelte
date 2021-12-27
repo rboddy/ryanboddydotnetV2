@@ -28,7 +28,7 @@
         and (max-device-width: 480px)
         and (-webkit-min-device-pixel-ratio: 2) {
             .bioGrid {
-                padding: 0px;
+                grid-template-columns: none;
             }
     }
 </style>
