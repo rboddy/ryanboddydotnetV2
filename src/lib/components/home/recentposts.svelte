@@ -1,6 +1,5 @@
 <script>
     import client from "/src/routes/sanity.js";
-    import { each } from "svelte/internal";
 
     let query = "*[_type == 'post'] | order(publishedAt desc) {title, publishedAt, slug, excerpt}[0...3]"
 
@@ -9,6 +8,10 @@
         return blogPosts;
     }
     const posts = getPosts();
+
+    function formatDate(date) {
+        return new Date(date).toLocaleDateString()
+    }
 
 </script>
 
@@ -21,7 +24,7 @@
                 <h3>{post.title}</h3>
                 <p>{post.excerpt}</p>
                 <div class="btnBar">
-                    <p>{post.publishedAt}</p>
+                    <p>{formatDate(post.publishedAt)}</p>
                     <div></div>
                     <a href={post.slug.current}>Read More <i class="fas fa-arrow-square-right"></i></a>
                 </div>
@@ -62,7 +65,7 @@
     .btnBar {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        place-items: center;
+        align-items: center;
     }
     .postCard a{
         text-decoration: none;
