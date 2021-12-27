@@ -79,4 +79,13 @@
         font-size: 20px;
         line-height: 10px;
     }
+    @media only screen 
+        and (min-device-width: 320px) 
+        and (max-device-width: 480px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+            .postCard {
+                width: 80%;
+                height: auto;
+            }
+    }
 </style>
