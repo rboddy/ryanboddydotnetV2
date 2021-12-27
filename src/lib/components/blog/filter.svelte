@@ -5,7 +5,6 @@
 
     async function getCats() {
         let categories = await client.fetch(query);
-        console.log(categories)
         return categories;
     }
     const cats = getCats();
