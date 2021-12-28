@@ -1,9 +1,25 @@
-<form class="contactForm">
+<script>
+    import{ init, sendForm } from 'emailjs-com';
+    init("user_yIQs4o5dkho3nOercs84S");
+
+    function sendMessage() {
+        let message = document.getElementById('contactForm');
+        console.log(message);
+            sendForm('default_service', 'contact_form', message)
+                .then(() => {
+                    console.log('Success')
+                }).catch(() => {
+                    console.error('Failed...', error);
+                })
+    }
+</script>
+
+<form class="contactForm" on:submit|preventDefault={sendMessage} id="contactForm">
     <div class="inputBar">
-        <input type="text" class="formInput" placeholder="Name" />
-        <input type="text" class="formInput" placeholder="Email" />
+        <input type="text" class="formInput" name="user_name" placeholder="Name" />
+        <input type="text" class="formInput" name="user_email" placeholder="Email" />
     </div>
-    <textarea class="messageBox" placeholder="message"></textarea>
+    <textarea class="messageBox" name="message" placeholder="message"></textarea>
     <button type="submit" class="submitBtn">Send</button>
 </form>
 
