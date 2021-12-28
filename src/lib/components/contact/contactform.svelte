@@ -53,6 +53,7 @@
         margin-top: 15px;
         margin-bottom: 15px;
         float: right;
+        font-size: 16px;
     }
     @media only screen 
         and (min-device-width: 320px) 
