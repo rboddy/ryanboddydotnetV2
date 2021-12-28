@@ -7,19 +7,19 @@
         console.log(message);
             sendForm('default_service', 'contact_form', message)
                 .then(() => {
-                    console.log('Success')
+                    window.alert('Success! Message sent!');
                 }).catch(() => {
-                    console.error('Failed...', error);
+                    window.alert('Error! Try again later.');
                 })
     }
 </script>
 
 <form class="contactForm" on:submit|preventDefault={sendMessage} id="contactForm">
     <div class="inputBar">
-        <input type="text" class="formInput" name="user_name" placeholder="Name" />
-        <input type="text" class="formInput" name="user_email" placeholder="Email" />
+        <input type="text" class="formInput" name="user_name" required placeholder="Name" />
+        <input type="text" class="formInput" name="user_email" required placeholder="Email" />
     </div>
-    <textarea class="messageBox" name="message" placeholder="message"></textarea>
+    <textarea class="messageBox" name="message" required placeholder="message"></textarea>
     <button type="submit" class="submitBtn">Send</button>
 </form>
 
