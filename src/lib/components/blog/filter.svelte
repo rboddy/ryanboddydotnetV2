@@ -27,7 +27,7 @@
 
 <style>
     .filterBox {
-        width: 75%;
+        width: 60%;
         background-color: #757083;
         margin: 0 auto;
         margin-top: 30px;
