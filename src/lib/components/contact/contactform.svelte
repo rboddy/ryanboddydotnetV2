@@ -1,6 +1,7 @@
 <script>
     import{ init, sendForm } from 'emailjs-com';
     init("user_yIQs4o5dkho3nOercs84S");
+    import { goto } from '$app/navigation';
 
     function sendMessage() {
         let message = document.getElementById('contactForm');
@@ -8,6 +9,7 @@
             sendForm('default_service', 'contact_form', message)
                 .then(() => {
                     window.alert('Success! Message sent!');
+                    goto('/')
                 }).catch(() => {
                     window.alert('Error! Try again later.');
                 })
