@@ -19,7 +19,6 @@
         outline: none;
     }
     .formInput {
-        width: 100%;
         height: 40px;
         font-size: 16px;
         border: none;
@@ -34,6 +33,7 @@
         box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
         border: none;
         padding: 10px;
+        box-sizing: border-box;
         border-radius: 15px;
         font-size: 16px;
         font-family: 'Open Sans', sans-serif;
@@ -51,6 +51,19 @@
         background-color: #199BED;
         border-radius: 90px;
         margin-top: 15px;
+        margin-bottom: 15px;
+        float: right;
+    }
+    @media only screen 
+        and (min-device-width: 320px) 
+        and (max-device-width: 480px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+            .contactForm {
+                width: 80%;
+            }
+            .inputBar {
+                grid-template-columns: none;
+            }
     }
 
 </style>
