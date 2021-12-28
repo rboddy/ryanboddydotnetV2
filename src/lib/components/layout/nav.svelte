@@ -22,11 +22,11 @@
 </nav>
 {#if visible}
 <div class="mobileNav" transition:slide >
-    <a class="mobileLink" href="/"><i class="fas fa-home"></i> Home</a>
+    <a class="mobileLink" on:click={toggle} href="/"><i class="fas fa-home"></i> Home</a>
     <hr />
-    <a class="mobileLink" href="/contact"><i class="far fa-envelope-square"></i> Contact</a>
+    <a class="mobileLink" on:click={toggle} href="/contact"><i class="far fa-envelope-square"></i> Contact</a>
     <hr />
-    <a class="mobileLink" href="/blog"><i class="fas fa-typewriter"></i> Blog</a>
+    <a class="mobileLink" on:click={toggle} href="/blog"><i class="fas fa-typewriter"></i> Blog</a>
     <hr />
     <a class="mobileLink" href="/"><i class="fa-brands fa-discord"></i> Join</a>
     <hr />
