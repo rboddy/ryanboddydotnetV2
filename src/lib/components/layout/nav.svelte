@@ -13,7 +13,7 @@
         <div></div>
         <a href="/contact"><i class="far fa-envelope-square"></i> contact</a>
         <a href="/blog"><i class="fas fa-typewriter"></i> blog</a>
-        <a href="/" class="btnLink"><i class="fa-brands fa-discord"></i> Join</a>
+        <a href="https://discord.gg/B5sqjqfK7N" target="_blank" class="btnLink"><i class="fa-brands fa-discord"></i> Join</a>
     </div>
     <div class="mobileNavBtn">
         <div></div>
@@ -28,7 +28,7 @@
     <hr />
     <a class="mobileLink" on:click={toggle} href="/blog"><i class="fas fa-typewriter"></i> Blog</a>
     <hr />
-    <a class="mobileLink" href="/"><i class="fa-brands fa-discord"></i> Join</a>
+    <a class="mobileLink" target="_blank" href="https://discord.gg/B5sqjqfK7N"><i class="fa-brands fa-discord"></i> Join</a>
     <hr />
 </div>
 {/if}

@@ -1,6 +1,15 @@
+<script>
+import { goto } from "$app/navigation";
+
+
+    function openDiscord() {
+        goto('https://discord.gg/B5sqjqfK7N')
+    }
+</script>
+
 <div class="cta">
     <h2>It's dangerous to go alone!</h2>
-    <button class="ctaBtn shake"><i class="fa-brands fa-discord"></i> Join the community</button>
+    <button on:click={openDiscord} class="ctaBtn shake"><i class="fa-brands fa-discord"></i> Join the community</button>
 </div>
 
 <style>
