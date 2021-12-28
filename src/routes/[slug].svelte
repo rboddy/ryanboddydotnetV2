@@ -23,7 +23,7 @@ import Articles from "$lib/components/blog/articles.svelte";
         <h3>Published: {formatDate(article.publishedAt)}</h3>
         <div class="categories">
             {#each article.categories as category}
-                <button>{category}</button>
+                <button class="catBtn">{category}</button>
             {/each}
         </div>
         <div class="post">
@@ -43,6 +43,18 @@ import Articles from "$lib/components/blog/articles.svelte";
     .blogPost {
         width: 60%;
         margin: 0 auto;
+    }
+    .catBtn {
+        height: 50px;
+        width: 200px;
+        border: none;
+        border-radius: 360px;
+        box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+        background-color: #199BED;
+        font-size: 16px;
+    }
+    .catBtn:hover {
+        cursor: pointer;
     }
     h2 {
         font-size: 5vh;
