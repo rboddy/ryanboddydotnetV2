@@ -15,6 +15,10 @@
     function formatDate(date) {
         return new Date(date).toLocaleDateString()
     }
+
+    function redirectCat(postCategory) {
+        console.log(postCategory);
+    }
 </script>
 
 {#await post then article}
@@ -23,7 +27,7 @@
         <h3>Published: {formatDate(article.publishedAt)}</h3>
         <div class="categories">
             {#each article.categories as category}
-                <button class="catBtn">{category}</button>
+                <button on:click={() => redirectCat(category)} class="catBtn">{category}</button>
             {/each}
         </div>
         <div class="post">
