@@ -1,5 +1,6 @@
 <script>
     import client from "/src/routes/sanity.js";
+    import { goto } from '$app/navigation';
 
     let query = "*[_type == 'category']{ title }"
 
@@ -8,13 +9,17 @@
         return categories;
     }
     const cats = getCats();
+
+    function categoryFilter(category){
+        goto(`/category/${category}`);
+    }
 </script>
 
 <div class="filterBox">
     <p class="sortBy">Sort by Topic:</p>
     {#await cats then categories}
         {#each categories as category}
-            <button class="catBtn">{category.title}</button>
+            <button on:click={() => categoryFilter(category.title)} class="catBtn">{category.title}</button>
         {/each}
         <select class="mobileSelect">
             <option>Sort by Category</option>
