@@ -64,12 +64,12 @@
     .categories {
         margin-bottom: 30px;
     }
-    .post > p {
-        text-align: left;
-    }
     .post > img {
         max-width: 100%;
         font-size: 16px;
+    }
+    img {
+        width: 100%;
     }
     @media only screen 
         and (min-device-width: 320px) 
