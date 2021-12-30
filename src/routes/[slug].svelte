@@ -1,13 +1,13 @@
 <script>
     import client from "/src/routes/sanity.js";
     import { page } from '$app/stores'
-import Articles from "$lib/components/blog/articles.svelte";
+    import SvelteMarkdown from 'svelte-markdown';
 
     let query = `*[ slug.current == '${ $page.params.slug }']{title, publishedAt, slug, body, 'images': body[].asset->url, "categories": categories[]->title, "imageUrl": mainImage.asset->url }`
 
     async function getPost() {
         let blogPost = await client.fetch(query);
-        console.log(blogPost[0]);
+        // console.log(blogPost[0]);
         return blogPost[0];
     }
     const post = getPost();
@@ -28,13 +28,7 @@ import Articles from "$lib/components/blog/articles.svelte";
         </div>
         <div class="post">
             <img class="headerImage" src={article.imageUrl} alt="Main blog" />
-            {#each article.body as paragraph, i}
-                {#if paragraph.children != undefined}
-                    <p>{paragraph.children[0].text}</p>
-                {:else}
-                    <img src={article.images[i]} alt='Blog'/>
-                {/if}
-            {/each}
+            <SvelteMarkdown source={article.body} />
         </div>
     </div>
 {/await}
