@@ -2,6 +2,7 @@
     import client from "/src/routes/sanity.js";
     import { page } from '$app/stores'
     import SvelteMarkdown from 'svelte-markdown';
+    import { goto } from '$app/navigation';
 
     let query = `*[ slug.current == '${ $page.params.slug }']{title, publishedAt, slug, body, 'images': body[].asset->url, "categories": categories[]->title, "imageUrl": mainImage.asset->url }`
 
@@ -17,7 +18,7 @@
     }
 
     function redirectCat(postCategory) {
-        console.log(postCategory);
+        goto(`/category/${postCategory}`);
     }
 </script>
 
