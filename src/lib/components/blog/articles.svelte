@@ -1,7 +1,9 @@
 <script>
     import client from "/src/routes/sanity.js";
 
-    let query = "*[_type == 'post'] | order(publishedAt desc) {title, publishedAt, slug }"
+    let searchTerm = '*';
+
+    let query = `*[_type == 'post' && title match '${searchTerm}' ] | order(publishedAt desc) {title, publishedAt, slug }`
 
     async function getPosts() {
         let blogPosts = await client.fetch(query);
