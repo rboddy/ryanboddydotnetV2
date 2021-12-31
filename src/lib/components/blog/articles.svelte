@@ -1,7 +1,12 @@
 <script>
     import client from "/src/routes/sanity.js";
+    import { search } from '/src/routes/stores.js';
 
-    let searchTerm = '*';
+    let searchTerm;
+
+    search.subscribe(value => {
+        searchTerm = value;
+    })
 
     let query = `*[_type == 'post' && title match '${searchTerm}' ] | order(publishedAt desc) {title, publishedAt, slug }`
 

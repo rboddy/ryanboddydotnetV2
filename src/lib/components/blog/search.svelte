@@ -1,5 +1,9 @@
 <script>
-    import client from "/src/routes/sanity.js";
+    import { search } from '/src/routes/stores.js';
+
+    function searchField() {
+        
+    }
 </script>
 
 <form class="searchForm">
