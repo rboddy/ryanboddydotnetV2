@@ -31,8 +31,8 @@
                 <button on:click={() => redirectCat(category)} class="catBtn">{category}</button>
             {/each}
         </div>
+        <img class="headerImage" src={article.imageUrl} alt="Main blog" />
         <div class="post">
-            <img class="headerImage" src={article.imageUrl} alt="Main blog" />
             <SvelteMarkdown source={article.body} />
         </div>
     </div>
@@ -40,7 +40,7 @@
 
 <style>
     .blogPost {
-        width: 60%;
+        width: 50%;
         margin: 0 auto;
     }
     .catBtn {
@@ -65,9 +65,12 @@
     .categories {
         margin-bottom: 30px;
     }
-    .post > img {
+    img {
         max-width: 100%;
-        font-size: 16px;
+    }
+    .post {
+        text-align: left;
+        font-size: 18px;
     }
     img {
         width: 100%;
