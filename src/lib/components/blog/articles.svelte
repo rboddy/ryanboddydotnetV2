@@ -1,14 +1,21 @@
 <script>
+import { onMount } from "svelte";
+
     import client from "/src/routes/sanity.js";
     import { search } from '/src/routes/stores.js';
 
-    let searchTerm;
-
-    search.subscribe(value => {
-        searchTerm = value;
+    onMount(() => {
+        search.subscribe(value => {
+            const items = document.querySelectorAll('#articleRow');
+            for (let item of items) {
+                item.style.display = item.innerText.includes(value)
+                ? "div"
+                : "none";
+            }
+        })
     })
 
-    let query = `*[_type == 'post' && title match '${searchTerm}' ] | order(publishedAt desc) {title, publishedAt, slug }`
+    let query = `*[ _type == 'post' ] | order(publishedAt desc) {title, publishedAt, slug }`
 
     async function getPosts() {
         let blogPosts = await client.fetch(query);
@@ -29,9 +36,11 @@
         {#await posts then postList}
 
             {#each postList as post}
-                <a class="articleLink" href={post.slug.current} >{post.title}</a> 
-                <div></div>
-                <p class="date">{formatDate(post.publishedAt)}</p>
+                <div class="articleRow" id="articleRow">
+                    <a class="articleLink" href={post.slug.current} >{post.title}</a> 
+                    <div></div>
+                    <p class="date">{formatDate(post.publishedAt)}</p>
+                </div>
             {/each}
         
         {/await}
@@ -58,7 +67,7 @@
         font-size: 18px;
         font-weight: bold;
     }
-    .articleList {
+    .articleRow {
         display: grid;
         grid-template-columns: 2fr 1fr 1fr;
     }

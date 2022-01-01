@@ -1,13 +1,10 @@
 <script>
     import { search } from '/src/routes/stores.js';
 
-    function searchField() {
-        
-    }
 </script>
 
 <form class="searchForm">
-    <input type='text' class='search' placeholder="&#128269 Search" />
+    <input type='text' bind:value={$search} class='search' placeholder="&#128269 Search" />
 </form>
 
 <style>
