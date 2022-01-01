@@ -8,8 +8,8 @@ import { onMount } from "svelte";
         search.subscribe(value => {
             const items = document.querySelectorAll('#articleRow');
             for (let item of items) {
-                item.style.display = item.innerText.includes(value)
-                ? "div"
+                item.style.display = item.innerText.toLowerCase().includes(value.toLowerCase())
+                ? "grid"
                 : "none";
             }
         })
