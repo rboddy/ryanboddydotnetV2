@@ -3,6 +3,7 @@
     import { page } from '$app/stores'
     import SvelteMarkdown from 'svelte-markdown';
     import { goto } from '$app/navigation';
+    import Signature from "$lib/components/blog/signature.svelte";
 
     let query = `*[ slug.current == '${ $page.params.slug }']{title, publishedAt, slug, body, 'images': body[].asset->url, "categories": categories[]->title, "imageUrl": mainImage.asset->url }`
 
@@ -37,6 +38,7 @@
         </div>
     </div>
 {/await}
+<Signature />
 
 <style>
     .blogPost {
