@@ -4,7 +4,7 @@
 
 <div class="signatureBox">
     <img {src} class="gravatar" alt="Ryan" />
-    <p>Thank you so much for reading this post and for sticking around! I want every article I put out to bring value to those in my community and the dev community as a whole. If you are new here, thanks for visiting. If you are returning, thank you for your continued support. Remember that if you haven't yet, you can join our growing community on our <a href="https://discord.gg/B5sqjqfK7N" target="_blank">disord server.</a> Cheers!</p>
+    <p>Thank you so much for reading this post and for sticking around! I want every article I put out to bring value to those in my community and the dev community as a whole. If you are new here, thanks for visiting. If you are returning, thank you for your continued support. Remember that if you haven't yet, you can join our growing community on our <a href="https://discord.gg/B5sqjqfK7N" target="_blank">discord server.</a> Cheers!</p>
 </div>
 
 <style>
