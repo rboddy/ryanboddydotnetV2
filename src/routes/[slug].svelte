@@ -40,14 +40,6 @@
 {/await}
 <Signature />
 
-<svelte:head>
-    {#await post then article}
-        <meta property="og:title" content={article.title} />
-        <meta property="og:description" content={article.excerpt} />
-        <meta property="og:image" content={article.imageUrl} />
-    {/await}
-</svelte:head>
-
 <style>
     .blogPost {
         width: 50%;
