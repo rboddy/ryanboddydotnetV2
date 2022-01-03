@@ -5,7 +5,7 @@
     import { goto } from '$app/navigation';
     import Signature from "$lib/components/blog/signature.svelte";
 
-    let query = `*[ slug.current == '${ $page.params.slug }']{title, publishedAt, slug, body, "categories": categories[]->title, "imageUrl": mainImage.asset->url }`
+    let query = `*[ slug.current == '${ $page.params.slug }']{title, excerpt, publishedAt, slug, body, "categories": categories[]->title, "imageUrl": mainImage.asset->url }`
 
     async function getPost() {
         let blogPost = await client.fetch(query);
@@ -39,6 +39,14 @@
     </div>
 {/await}
 <Signature />
+
+<svelte:head>
+    {#await post then article}
+        <meta property="og:title" content={article.title} />
+        <meta property="og:description" content={article.excerpt} />
+        <meta property="og:image" content={article.imageUrl} />
+    {/await}
+</svelte:head>
 
 <style>
     .blogPost {
