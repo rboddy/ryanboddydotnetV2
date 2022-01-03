@@ -1,18 +1,26 @@
+<script context="module">
+    export async function load({ url }){
+        
+        console.log(url.pathname)
+
+        const query = `*[ slug.current == '${ url.pathname.split('/').slice(-1)[0] }']{title, excerpt, publishedAt, slug, body, "categories": categories[]->title, "imageUrl": mainImage.asset->url }`
+
+        let blogPost = await client.fetch(query);
+        // console.log(blogPost[0]);
+        return {
+            props: {
+                post: blogPost[0]
+            }
+        }
+    }
+        
+</script>
+
 <script>
     import client from "/src/routes/sanity.js";
-    import { page } from '$app/stores'
     import SvelteMarkdown from 'svelte-markdown';
     import { goto } from '$app/navigation';
     import Signature from "$lib/components/blog/signature.svelte";
-
-    let query = `*[ slug.current == '${ $page.params.slug }']{title, excerpt, publishedAt, slug, body, "categories": categories[]->title, "imageUrl": mainImage.asset->url }`
-
-    async function getPost() {
-        let blogPost = await client.fetch(query);
-        // console.log(blogPost[0]);
-        return blogPost[0];
-    }
-    const post = getPost();
 
     function formatDate(date) {
         return new Date(date).toLocaleDateString()
@@ -21,23 +29,38 @@
     function redirectCat(postCategory) {
         goto(`/category/${postCategory}`);
     }
+
+    export let post
 </script>
 
-{#await post then article}
-    <div class="blogPost">
-        <h2>{article.title}</h2>
-        <h3>Published: {formatDate(article.publishedAt)}</h3>
-        <div class="categories">
-            {#each article.categories as category}
-                <button on:click={() => redirectCat(category)} class="catBtn">{category}</button>
-            {/each}
-        </div>
-        <img class="headerImage" src={article.imageUrl} alt="Main blog" />
-        <div class="post">
-            <SvelteMarkdown source={article.body} />
-        </div>
+<svelte:head>
+
+	<meta name="description" content={post.excerpt} />
+	<meta property="og:description" content={post.excerpt} />
+	<meta name="twitter:description" content={post.excerpt} />
+
+	<title>{post.title}</title>
+  <meta property="og:title" content="{post.title}" />
+	<meta name="twitter:title" content="{post.title}" />
+
+	<meta property="og:image" content="{post.imageUrl}" />
+	<meta name="twitter:image" content="{post.imageUrl}" />
+</svelte:head>
+
+<div class="blogPost">
+    <h2>{post.title}</h2>
+    <h3>Published: {formatDate(post.publishedAt)}</h3>
+    <div class="categories">
+        {#each post.categories as category}
+            <button on:click={() => redirectCat(category)} class="catBtn">{category}</button>
+        {/each}
     </div>
-{/await}
+    <img class="headerImage" src={post.imageUrl} alt="Main blog" />
+    <div class="post">
+        <SvelteMarkdown source={post.body} />
+    </div>
+</div>
+
 <Signature />
 
 <style>
