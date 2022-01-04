@@ -12,3 +12,14 @@
 <Bio />
 
 <Recentposts />
+
+<footer>
+    <p>Copyright &copy; Ryan Boddy 2021 | Illustrations done by <a href="https://twitter.com/JoyceHamilton44">JoyceHamilton44</a></p>
+</footer>
+
+<style>
+    footer {
+        width: 100%;
+        text-align: center;
+    }
+</style>

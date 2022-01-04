@@ -1,11 +1,11 @@
 <script>
     import Cta from '$lib/components/home/cta.svelte'
 
-    let src = "/images/Pixelme.png";
+    let src = "/images/PrimaryImage.png";
 </script>
 
 <div class="bioGrid">
-    <img {src} class="gravatar" alt="Ryan" />
+    <img {src} class="avatar" alt="Ryan" />
     <Cta />
 </div>
 
@@ -18,9 +18,9 @@
         place-items: center;
         padding: 0px 30px 0px 30px;
     }
-    .gravatar {
+    .avatar {
         border-radius: 20px;
-        width: 25vh;
+        width: 40vh;
         height: auto;
     }
     @media only screen 
