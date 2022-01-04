@@ -34,15 +34,11 @@
 </script>
 
 <svelte:head>
-
 	<meta name="description" content={post.excerpt} />
 	<meta property="og:description" content={post.excerpt} />
 	<meta name="twitter:description" content={post.excerpt} />
-
-	<title>{post.title}</title>
-  <meta property="og:title" content="{post.title}" />
+    <meta property="og:title" content="{post.title}" />
 	<meta name="twitter:title" content="{post.title}" />
-
 	<meta property="og:image" content="{post.imageUrl}" />
 	<meta name="twitter:image" content="{post.imageUrl}" />
 </svelte:head>
