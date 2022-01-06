@@ -31,7 +31,7 @@
             </div>
         {/each}
         <div class="readMore">
-            <a class="blogLink" href="/blog"><i class="fas fa-arrow-circle-right fa-5x"></i><br />All Posts</a>
+            <a class="blogLink" href="/blog"><i class="fas fa-arrow-circle-right fa-5x"></i>All Posts</a>
         </div>
     {/await}
 </div>
@@ -82,7 +82,7 @@
         display: grid;
         place-items: center;
         font-size: 20px;
-        line-height: 10px;
+        line-height: 1.5em;
     }
     @media only screen 
         and (min-device-width: 320px) 
