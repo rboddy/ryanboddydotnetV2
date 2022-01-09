@@ -1,6 +1,5 @@
 <script>
     import{ init, sendForm } from 'emailjs-com';
-    import { slide } from 'svelte/transition';
     init("user_yIQs4o5dkho3nOercs84S");
 
     function sendMessage() {
@@ -28,7 +27,7 @@
         <input type="email" class="formInput" name="user_email" required placeholder="Email" />
     </div>
     <textarea class="messageBox" name="message" required placeholder="message"></textarea>
-    <button type="submit" transition:slide id="submitBtn" class="submitBtn">Send</button>
+    <button type="submit" id="submitBtn" class="submitBtn">Send</button>
 </form>
 
 <style>
