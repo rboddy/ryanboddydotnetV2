@@ -11,7 +11,8 @@
 
         sendForm('default_service', 'contact_form', message)
             .then(() => {
-                btn.classList.add('success');
+                btn.style.backgroundColor = "#1D2030";
+                btn.style.color = 'white';
                 btn.innerText = 'Message Sent!';
             }).catch(() => {
                 window.alert('Error! Try again later.');
@@ -37,10 +38,6 @@
         margin-bottom: 50px;
         width: 25%;
         text-align: center;
-    }
-    .success {
-        background-color: #1D2030;
-        color: white;
     }
     .contactForm *:focus {
         outline: none;
