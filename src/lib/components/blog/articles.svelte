@@ -81,7 +81,7 @@ import { onMount } from "svelte";
             .date {
                 display: none;
             }
-            .articleList {
+            .articleRow {
                 grid-template-columns: none;
             }
             .articleLink {
