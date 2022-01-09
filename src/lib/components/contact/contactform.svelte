@@ -1,28 +1,34 @@
 <script>
     import{ init, sendForm } from 'emailjs-com';
+    import { slide } from 'svelte/transition';
     init("user_yIQs4o5dkho3nOercs84S");
-    import { goto } from '$app/navigation';
 
     function sendMessage() {
         let message = document.getElementById('contactForm');
+        let btn = document.getElementById('submitBtn');
+        btn.disabled = true;
+        btn.innerText = 'Message Sending...'
         console.log(message);
-            sendForm('default_service', 'contact_form', message)
-                .then(() => {
-                    window.alert('Success! Message sent!');
-                    goto('/')
-                }).catch(() => {
-                    window.alert('Error! Try again later.');
-                })
+
+        sendForm('default_service', 'contact_form', message)
+            .then(() => {
+                btn.classList.add('success');
+                btn.innerText = 'Message Sent!';
+            }).catch(() => {
+                window.alert('Error! Try again later.');
+                btn.disabled = false;
+                btn.innerText = 'Send'
+            })
     }
 </script>
 
 <form class="contactForm" on:submit|preventDefault={sendMessage} id="contactForm">
     <div class="inputBar">
         <input type="text" class="formInput" name="user_name" required placeholder="Name" />
-        <input type="text" class="formInput" name="user_email" required placeholder="Email" />
+        <input type="email" class="formInput" name="user_email" required placeholder="Email" />
     </div>
     <textarea class="messageBox" name="message" required placeholder="message"></textarea>
-    <button type="submit" class="submitBtn">Send</button>
+    <button type="submit" transition:slide id="submitBtn" class="submitBtn">Send</button>
 </form>
 
 <style>
@@ -32,6 +38,10 @@
         margin-bottom: 50px;
         width: 25%;
         text-align: center;
+    }
+    .success {
+        background-color: #1D2030;
+        color: white;
     }
     .contactForm *:focus {
         outline: none;
