@@ -13,6 +13,12 @@
     function categoryFilter(category){
         goto(`/category/${category}`);
     }
+    function mobileCategoryFilter(event){
+        let selection = event.srcElement.value;
+        if(selection !== "Sort By Category"){
+            goto(`/category/${selection}`);
+        }
+    }
 </script>
 
 <div class="filterBox">
@@ -21,7 +27,7 @@
         {#each categories as category}
             <button on:click={() => categoryFilter(category.title)} class="catBtn">{category.title}</button>
         {/each}
-        <select class="mobileSelect">
+        <select on:change={mobileCategoryFilter} class="mobileSelect">
             <option>Sort by Category</option>
             {#each categories as category}
                 <option>{category.title}</option>
