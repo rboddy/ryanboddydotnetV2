@@ -44,7 +44,7 @@
 </svelte:head>
 
 <div class="blogPost">
-    <h2>{post.title}</h2>
+    <h1>{post.title}</h1>
     <h3>Published: {formatDate(post.publishedAt)}</h3>
     <div class="categories">
         {#each post.categories as category}
@@ -76,7 +76,7 @@
     .catBtn:hover {
         cursor: pointer;
     }
-    h2 {
+    h1 {
         font-size: 5vh;
         margin-top: 30px;
     }
