@@ -51,7 +51,9 @@
             <button on:click={() => redirectCat(category)} class="catBtn">{category}</button>
         {/each}
     </div>
-    <img class="headerImage" src={post.imageUrl} alt="Main blog" />
+    {#if post.imageUrl}
+        <img class="headerImage" src={post.imageUrl} alt="Main blog" />
+    {/if}
     <div class="post">
         <SvelteMarkdown source={post.body} />
     </div>
