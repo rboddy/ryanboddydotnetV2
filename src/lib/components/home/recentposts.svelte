@@ -15,7 +15,7 @@
 
 </script>
 
-<h1>Recent Posts</h1>
+<h2>Recent Posts</h2>
 
 <div class="postsGrid">
     {#await posts then postlist}
@@ -37,7 +37,7 @@
 </div>
 
 <style>
-    h1 {
+    h2 {
         text-align: center;
         margin-top: 50px;
         color: #1D2030;
