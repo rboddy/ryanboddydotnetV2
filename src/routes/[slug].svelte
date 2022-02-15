@@ -18,7 +18,7 @@
 
 <script>
     import client from "/src/routes/sanity.js";
-    import SvelteMarkdown from 'svelte-markdown';
+    import SvelteMarkdown from '../utils/svelte-markdown-main';
     import { goto } from '$app/navigation';
     import Signature from "$lib/components/blog/signature.svelte";
 
