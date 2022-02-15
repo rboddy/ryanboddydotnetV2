@@ -3,7 +3,7 @@
         
         console.log(url.pathname)
 
-        const query = `*[ slug.current == '${ url.pathname.split('/').slice(-1)[0] }']{title, excerpt, publishedAt, slug, body, "categories": categories[]->title, "imageUrl": mainImage.asset->url }`
+        const query = `*[ slug.current == '${ url.pathname.split('/').slice(-1)[0] }']{title, excerpt, publishedAt, slug, body, "categories": categories[]->title, "imageUrl": mainImage.asset->url, YouTube }`
 
         let blogPost = await client.fetch(query);
         // console.log(blogPost[0]);
@@ -57,6 +57,9 @@
     <div class="post">
         <SvelteMarkdown source={post.body} />
     </div>
+    {#if post.YouTube}
+    <iframe width="560" height="315" src={post.YouTube.url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {/if}
 </div>
 
 <Signature />
