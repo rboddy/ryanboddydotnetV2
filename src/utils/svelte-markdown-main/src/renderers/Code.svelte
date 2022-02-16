@@ -1,16 +1,13 @@
 <script>
-  export let lang
+  import { HighlightSvelte } from "svelte-highlight";
+  import vs2015 from "svelte-highlight/src/styles/vs2015";
+
   export let text
+  $: code = text
 </script>
 
-<pre class={lang}><code>{text}</code></pre>
+<svelte:head>
+  {@html vs2015}
+</svelte:head>
 
-<style>
-  pre {
-    overflow-x: auto;
-    background-color: #1D2030;
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-  }
-</style>
+<HighlightSvelte {code} />
