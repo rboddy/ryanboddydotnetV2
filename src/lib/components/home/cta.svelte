@@ -19,7 +19,7 @@ import { goto } from "$app/navigation";
     h2 {
         font-size: 3vh;
         font-family: "Fjalla One", sans-serif;
-        color: #1D2030;
+        color: white;
     }
     .ctaBtn {
         height: 50px;

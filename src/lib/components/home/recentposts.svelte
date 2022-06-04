@@ -21,12 +21,14 @@
     {#await posts then postlist}
         {#each postlist as post}
             <div class="postCard">
-                <h3>{post.title}</h3>
-                <p>{post.excerpt}</p>
-                <div class="btnBar">
-                    <p>{formatDate(post.publishedAt)}</p>
-                    <div></div>
-                    <a href={post.slug.current}>Read More <i class="fas fa-arrow-square-right"></i></a>
+                <div class="cardContent">
+                    <h3>{post.title}</h3>
+                    <p>{post.excerpt}</p>
+                    <div class="btnBar">
+                        <p>{formatDate(post.publishedAt)}</p>
+                        <div></div>
+                        <a href={post.slug.current}>Read More <i class="fas fa-arrow-square-right"></i></a>
+                    </div>
                 </div>
             </div>
         {/each}
@@ -54,29 +56,35 @@
         place-items: center;
     }
     .postCard {
-        background-color: white;
         height: 250px;
         width: 90%;
         color: #1D2030;
-        border-radius: 10px;
-        box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+        background: linear-gradient(to right, red, blue);
         padding: 10px;
         display: grid;
         grid-template-rows: repeat(3, 1fr);
+        animation: rgb 5s infinite;
+    }
+    .cardContent {
+        background-color: #222;
+        color: white;
+        padding: 5px;
+        box-sizing: border-box;
+        height: 250px;
     }
     .btnBar {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         align-items: center;
     }
-    .postCard a{
+    .cardContent a{
         text-decoration: none;
-        color: #216798;
+        color: red;
         font-size: 18px;
         font-weight: bold;
     }
     .readMore a{
-        color: #216798;
+        color: blue;
         text-decoration: none;
         text-align: center;
         display: grid;
@@ -92,8 +100,8 @@
                 grid-template-columns: none;
                 width: 90%;
             }
-            .postCard {
+            /* .postCard {
                 height: auto;
-            }
+            } */
     }
 </style>
