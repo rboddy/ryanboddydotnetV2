@@ -83,9 +83,10 @@
         font-size: 18px;
         font-weight: bold;
     }
-    .readMore a{
+    .readMore a {
         color: blue;
         text-decoration: none;
+        font-weight: bold;
         text-align: center;
         display: grid;
         place-items: center;

@@ -1,6 +1,5 @@
 <script>
     import Nav from '$lib/components/layout/nav.svelte';
-    import { page } from '$app/stores';
 </script>
 
 <Nav />

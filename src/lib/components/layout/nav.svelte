@@ -52,7 +52,7 @@
     .custom-nav {
         width: 100%;
         height: 80px;
-        background-color: #1D2030;
+        background-color: #222;
     }
     .nav-menu {
         display: grid;
